@@ -1,7 +1,7 @@
-import React from 'react';
+import LoginPage from './pages/LoginPage';
 
 const App = () => {
-  return <div className="text-red-500">APP</div>;
+  return <LoginPage />;
 };
 
 export default App;
