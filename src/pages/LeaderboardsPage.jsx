@@ -1,4 +1,4 @@
-import landscapeBackground from '../pageLeaderboardsReal.png';
+import landscapeBackground from '../nicePageLeaderboards.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 
@@ -7,7 +7,7 @@ const LeaderboardsPage = () => {
     <div>
       <ImageBackground
         src={landscapeBackground}
-        hash="[EHdHa^axtWV5xNsAHwc04E99zV[]|TJ-kS4}*tjNd$yR7w3IqV]5?9z=sW=TvtO$~t4I[s-M}Rn"
+        hash="[fHJ8m}qJ7I=afR+fks.13EjxFockTocoLWCs,kAWVnkWDWDfibabFfioLf7oKj[WVayR+WVoKoe"
       />
       <NavigationBar />
       <div className="mt-8 ml-6 pr-6">

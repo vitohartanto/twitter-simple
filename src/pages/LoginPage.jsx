@@ -1,4 +1,4 @@
-import landscapeBackground from '../pageSignIn.png';
+import landscapeBackground from '../nicePageSignIn.png';
 import ImageBackground from '../components/ImageBackground';
 import talkNestLogo from '../talkNestLogo.png';
 

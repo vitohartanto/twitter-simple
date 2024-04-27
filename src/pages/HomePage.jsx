@@ -1,4 +1,4 @@
-import landscapeBackground from '../pageHomeFix.png';
+import landscapeBackground from '../nicePageSignIn.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 import { FaRegThumbsUp, FaRegThumbsDown, FaRegComment } from 'react-icons/fa';
