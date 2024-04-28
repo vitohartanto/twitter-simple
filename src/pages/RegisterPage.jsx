@@ -18,9 +18,7 @@ const RegisterPage = () => {
         className="py-4 px-6 sm:px-8 sm:py-6 w-[320px] sm:w-[480px] backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
       >
         <h1 className="text-3xl text-white font-bold mb-4 mt-2">Register</h1>
-        <h2 className="text-xl text-white font-medium mb-4">
-          Join the conversation! Share your story!
-        </h2>
+
         <div className="flex flex-col">
           <input
             type="text"
@@ -41,10 +39,10 @@ const RegisterPage = () => {
             Register
           </button>
         </div>
-        <div className="text-white text-sm inline">
-          <p className="inline">Haven&apos;t registered yet? </p>
-          <Link to="/register" className="inline text-blue-500">
-            Register here!
+        <div className="text-white text-sm mt-2  text-center">
+          <p className="inline">Already registered? </p>
+          <Link to="/" className="inline text-blue-500">
+            Sign in here!
           </Link>
         </div>
       </form>

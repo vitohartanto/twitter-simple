@@ -38,7 +38,7 @@ const LoginPage = () => {
             Sign In
           </button>
         </div>
-        <div className="text-white text-sm inline">
+        <div className="text-white text-sm mt-2 text-center self-center">
           <p className="inline">Haven&apos;t registered yet? </p>
           <Link to="/register" className="inline text-blue-500">
             Register here!

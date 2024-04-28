@@ -7,9 +7,10 @@ import RegisterPage from './pages/RegisterPage';
 import AddThreadPage from './pages/AddThreadPage';
 import DetailPage from './pages/DetailPage';
 import Loading from './components/Loading';
+import NotFound404Page from './pages/NotFound404Page';
 
 const App = () => {
-  let authUser = null;
+  let authUser = 1;
 
   if (authUser === null) {
     return (
@@ -27,8 +28,8 @@ const App = () => {
       {/* <Loading /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/threads" element={<RegisterPage />}>
-          <Route path="/newThread" element={<AddThreadPage />} />
+        <Route path="/threads">
+          <Route path="newThread" element={<AddThreadPage />} />
           <Route path=":threadId" element={<DetailPage />} />
         </Route>
         <Route path="/leaderboards" element={<LeaderboardsPage />} />

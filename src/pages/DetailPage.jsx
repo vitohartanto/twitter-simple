@@ -2,7 +2,7 @@ import landscapeBackground from '../nicePageDetails.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 import { FaRegThumbsUp, FaRegThumbsDown, FaRegComment } from 'react-icons/fa';
-import BackButton from '../components/BackButton';
+import { Link } from 'react-router-dom';
 
 const DetailPage = () => {
   return (
@@ -13,8 +13,12 @@ const DetailPage = () => {
       />
       <NavigationBar />
       <div className="px-4 pt-6">
-        <BackButton />
-        <div className="mt-2 p-6 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
+        <Link to="/" className="">
+          <p className="text-lg text-white px-4 py-2 inline backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
+            &lt; Back
+          </p>
+        </Link>
+        <div className="mt-6 p-6 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
           <h1 className="text-white text-4xl mb-3 font-bold">
             Judul Percakapan
           </h1>

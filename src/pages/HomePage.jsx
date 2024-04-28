@@ -3,6 +3,7 @@ import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 import { FaRegThumbsUp, FaRegThumbsDown, FaRegComment } from 'react-icons/fa';
 import AddThreadButton from '../components/AddThreadButton';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -40,9 +41,11 @@ const HomePage = () => {
             Available Discussions
           </h1>
           <div className="mt-8 p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-            <h1 className="text-white text-xl mb-3 font-bold">
-              Judul Percakapan
-            </h1>
+            <Link to="/threads/:threadId">
+              <h1 className="underline text-white text-xl mb-3 font-bold">
+                Judul Percakapan
+              </h1>
+            </Link>
             <p className="text-white text-lg mb-4">
               Lorem Ipsum Dolor Sit Amet
             </p>
