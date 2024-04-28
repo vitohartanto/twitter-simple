@@ -36,7 +36,7 @@ const DetailPage = () => {
           </div>
           <div className="flex flex-col mt-2">
             <p className="text-white text-3xl mt-4 font-bold mb-4">
-              Comment This Talk
+              Comment This Thread
             </p>
             <textarea
               name=""

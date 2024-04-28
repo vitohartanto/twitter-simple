@@ -3,7 +3,7 @@ import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 import BackButton from '../components/BackButton';
 
-const AddTalkPage = () => {
+const AddThreadPage = () => {
   return (
     <div className="">
       <ImageBackground
@@ -46,4 +46,4 @@ const AddTalkPage = () => {
   );
 };
 
-export default AddTalkPage;
+export default AddThreadPage;

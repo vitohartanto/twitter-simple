@@ -1,6 +1,7 @@
 import landscapeBackground from '../nicePageRegister.png';
 import ImageBackground from '../components/ImageBackground';
-import talkNestLogo from '../talkNestLogo.png';
+import threadNestLogo from '../threadNestLogo.png';
+import { Link } from 'react-router-dom';
 
 const RegisterPage = () => {
   return (
@@ -10,7 +11,7 @@ const RegisterPage = () => {
         hash="[NHmciD+EeM}%%NGr=WU0P-nw|X74.%1ogs:NWI@xZsp-ONHNbjbWFs+NHNtRoocsmX5$ijbkUsB"
       />
       <div className="p-4 absolute top-6 left-6 w-[120px] lg:w-[160px] backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-        <img src={talkNestLogo} alt="" />
+        <img src={threadNestLogo} alt="" />
       </div>
       <form
         action=""
@@ -39,6 +40,12 @@ const RegisterPage = () => {
           <button className="text-xl text-[#191919] hover:text-white hover:bg-[rgba(25,25,25,0.90)] hover:border-2 hover:border-white px-4 py-2 font-medium mt-4 mb-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]">
             Register
           </button>
+        </div>
+        <div className="text-white text-sm inline">
+          <p className="inline">Haven&apos;t registered yet? </p>
+          <Link to="/register" className="inline text-blue-500">
+            Register here!
+          </Link>
         </div>
       </form>
     </div>
