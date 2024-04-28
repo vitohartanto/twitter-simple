@@ -1,6 +1,7 @@
 import landscapeBackground from '../nicePageAddTalk.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
+import BackButton from '../components/BackButton';
 
 const AddTalkPage = () => {
   return (
@@ -10,10 +11,11 @@ const AddTalkPage = () => {
         hash="[fHJ8m}qJ7I=afR+fks.13EjxFockTocoLWCs,kAWVnkWDWDfibabFfioLf7oKj[WVayR+WVoKoe"
       />
       <NavigationBar />
-      <div className="flex flex-col justify-center items-center">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
+        <BackButton />
         <form
           action=""
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 py-4 px-6 sm:px-8 sm:py-6 w-[320px] sm:w-[480px] backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+          className=" py-4 px-6 sm:px-8 sm:py-6 w-[320px] sm:w-[480px] backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
         >
           <h1 className="text-3xl text-white font-bold mb-4 mt-2">
             Add New Talk
