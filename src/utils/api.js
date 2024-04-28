@@ -127,7 +127,7 @@ const api = (() => {
     return threads;
   }
 
-  async function getAllLeaderboards() {
+  async function seeLeaderboards() {
     const response = await fetch(`${BASE_URL}/leaderboards`, {
       method: 'GET',
     });
@@ -229,7 +229,7 @@ const api = (() => {
     }
   }
 
-  async function toggleDownVoteThread(threadId) {
+  async function downVoteThread(threadId) {
     const response = await _fetchWithAuth(
       `${BASE_URL}/threads/${threadId}/down-vote`,
       {
@@ -344,13 +344,13 @@ const api = (() => {
     seeOwnProfile,
     seeAllUsers,
     seeAllThreads,
-    getAllLeaderboards,
+    seeLeaderboards,
     seeThreadDetail,
     createThread,
     createComment,
     upVoteThread,
     neutralizeVoteThread,
-    toggleDownVoteThread,
+    downVoteThread,
     upVoteComment,
     neutralizeVoteComment,
     downVoteComment,
