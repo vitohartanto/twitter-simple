@@ -5,11 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import LeaderboardsPage from './pages/LeaderboardsPage';
 import RegisterPage from './pages/RegisterPage';
 import AddTalkPage from './pages/AddTalkPage';
+import DetailPage from './pages/DetailPage';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <AddTalkPage />
+      <DetailPage />
     </BrowserRouter>
   );
 };
