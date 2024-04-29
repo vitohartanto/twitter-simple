@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect, useMemo } from 'react';
 import { asyncPopulateUsersAndThreads } from '../states/shared/action';
+import ThreadLists from '../components/ThreadList';
 
 const HomePage = () => {
   const { threads = [], users = [] } = useSelector((states) => states);
@@ -25,7 +26,7 @@ const HomePage = () => {
     });
   }, [threads, category]);
 
-  const threadList = useMemo(() => {
+  const threadLists = useMemo(() => {
     return filteredThreads.map((thread) => ({
       ...thread,
       user: users.find((user) => user.id === thread.ownerId),
@@ -58,9 +59,16 @@ const HomePage = () => {
             Popular Category
           </h1>
           <div className="mt-6 flex flex-wrap">
-            <p className="mr-4 mb-2 text-center inline text-white text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-              #redux
-            </p>
+            {threadCategory?.map((thread) => (
+              <button
+                key={thread.id}
+                onClick={() => setCategory(thread.category)}
+                className="mr-4 mb-2 text-center inline text-white text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+              >
+                <span>{`#${thread.category}`}</span>
+              </button>
+            ))}
+
             <p className="mr-4 mb-2 text-center inline text-[#191919] text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]">
               #document
             </p>
@@ -75,6 +83,8 @@ const HomePage = () => {
           <h1 className="mb-2  font-medium text-white text-xl px-4 py-2 inline backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             Available Discussions
           </h1>
+          <ThreadLists threadLists={threadLists} />
+
           <div className="mt-8 p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             <Link to="/threads/:threadId">
               <h1 className="underline text-white text-xl mb-3 font-bold">
