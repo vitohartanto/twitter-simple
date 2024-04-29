@@ -4,8 +4,20 @@ import NavigationBar from '../components/NavigationBar';
 import { FaRegThumbsUp, FaRegThumbsDown, FaRegComment } from 'react-icons/fa';
 import AddThreadButton from '../components/AddThreadButton';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import asyncPopulateUsersAndThreads from '../states/shared/action';
 
 const HomePage = () => {
+  const { threads = [], users = [] } = useSelector((states) => states);
+  const dispatch = useDispatch();
+
+  const [category, setCategory] = useState('');
+
+  useEffect(() => {
+    dispatch(asyncPopulateUsersAndThreads());
+  }, [dispatch]);
+
   return (
     <div>
       <ImageBackground
