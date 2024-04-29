@@ -328,7 +328,6 @@ const api = (() => {
     );
 
     const responseJson = await response.json();
-
     const { status, message } = responseJson;
 
     if (status !== 'success') {

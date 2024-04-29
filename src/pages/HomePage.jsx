@@ -5,8 +5,8 @@ import { FaRegThumbsUp, FaRegThumbsDown, FaRegComment } from 'react-icons/fa';
 import AddThreadButton from '../components/AddThreadButton';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
-import asyncPopulateUsersAndThreads from '../states/shared/action';
+import { useState, useEffect, useMemo } from 'react';
+import { asyncPopulateUsersAndThreads } from '../states/shared/action';
 
 const HomePage = () => {
   const { threads = [], users = [] } = useSelector((states) => states);
@@ -17,6 +17,29 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(asyncPopulateUsersAndThreads());
   }, [dispatch]);
+
+  // useMemo is used here to optimize performance by memoizing the filtered result of the threads array based on the category prop, recalculating it only when necessary
+  const filteredThreads = useMemo(() => {
+    return threads.filter((thread) => {
+      return thread?.category.toLowerCase().includes(category?.toLowerCase());
+    });
+  }, [threads, category]);
+
+  const threadList = useMemo(() => {
+    return filteredThreads.map((thread) => ({
+      ...thread,
+      user: users.find((user) => user.id === thread.ownerId),
+    }));
+  }, [filteredThreads, users]);
+
+  const threadCategory = useMemo(() => {
+    return threads.reduce((accumulator, current) => {
+      if (!accumulator.find((item) => item.category === current.category)) {
+        accumulator.push(current);
+      }
+      return accumulator;
+    }, []);
+  }, [threads]);
 
   return (
     <div>

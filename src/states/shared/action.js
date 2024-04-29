@@ -3,19 +3,19 @@ import api from '../../utils/api';
 
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 
-import { receiveThreadsActionCreator } from '../threads/action';
-import { receiveUsersActionCreator } from '../users/action';
+import { seeThreadsActionCreator } from '../threads/action';
+import { seeUsersActionCreator } from '../users/action';
 
-export const asyncPopulateUsersAndThreads = () => {
+const asyncPopulateUsersAndThreads = () => {
   return async (dispatch) => {
     dispatch(showLoading());
 
     try {
-      const users = await api.getAllUsers();
-      const threads = await api.getAllThreads();
+      const users = await api.seeAllUsers();
+      const threads = await api.seeAllThreads();
 
-      dispatch(receiveUsersActionCreator(users));
-      dispatch(receiveThreadsActionCreator(threads));
+      dispatch(seeUsersActionCreator(users));
+      dispatch(seeThreadsActionCreator(threads));
     } catch (error) {
       toast.error(error.message);
     }
@@ -23,3 +23,5 @@ export const asyncPopulateUsersAndThreads = () => {
     dispatch(hideLoading());
   };
 };
+
+export { asyncPopulateUsersAndThreads };
