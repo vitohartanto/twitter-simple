@@ -7,8 +7,8 @@ import { FaRegThumbsUp } from 'react-icons/fa';
 import { MdSentimentNeutral } from 'react-icons/md';
 
 const NeutralizeVoteThreadButton = ({ threadId, upVotesBy, downVotesBy }) => {
-  const { authUser = null } = useSelector((states) => states);
-
+  // const { authUser = null } = useSelector((states) => states);
+  const authUser = useSelector((state) => state.authUser || null);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 

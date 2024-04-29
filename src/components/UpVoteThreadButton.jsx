@@ -2,12 +2,12 @@ import { useCallback, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncUpVoteThread } from '../states/threads/action';
-import asyncUpVoteThreadDetail from '../states/threadDetail/action';
+import { asyncUpVoteThreadDetail } from '../states/threadDetail/action';
 import { FaRegThumbsUp } from 'react-icons/fa';
 
 const UpVoteThreadButton = ({ threadId, upVotesBy }) => {
-  const { authUser = null } = useSelector((states) => states);
-
+  // const { authUser = null } = useSelector((states) => states);
+  const authUser = useSelector((state) => state.authUser || null);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 

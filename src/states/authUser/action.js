@@ -27,7 +27,7 @@ const asyncSetAuthUser = ({ email, password }) => {
       const token = await api.login({ email, password });
       api.putAccessToken(token);
 
-      const authUser = await api.seeOwnProfile;
+      const authUser = await api.seeOwnProfile();
       dispatch(setAuthUserActionCreator(authUser));
       toast.success('Login Successful');
     } catch (error) {

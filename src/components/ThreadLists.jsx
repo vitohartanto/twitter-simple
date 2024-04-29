@@ -12,7 +12,7 @@ import { postedAt } from '../utils/postedAt';
 
 const ThreadLists = ({ threadLists }) => {
   //Preventing Cross-Site Scripting using DOMPurify
-  const purifiedData = DOMPurify.sanitize(thread?.body);
+  const purifiedData = DOMPurify.sanitize(threadLists?.body);
   return (
     <div className="">
       {threadLists?.map((thread) => (
