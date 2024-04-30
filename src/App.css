@@ -6,3 +6,7 @@
   padding: 0;
   font-family: 'Poppins';
 }
+
+[contentEditable='true']:empty:not(:focus):before {
+  content: attr(data-text);
+}

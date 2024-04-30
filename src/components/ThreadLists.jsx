@@ -2,18 +2,17 @@ import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
 
-import { FaRegThumbsUp, FaRegThumbsDown, FaRegComment } from 'react-icons/fa';
+import { FaRegComment } from 'react-icons/fa';
 import UpVoteThreadButton from './UpVoteThreadButton';
 import NeutralizeVoteThreadButton from './NeutralizeVoteThreadButton';
 import DownVoteThreadButton from './DownVoteThreadButton';
 import { postedAt } from '../utils/postedAt';
 
 const ThreadLists = ({ threadLists }) => {
-  //Preventing Cross-Site Scripting using DOMPurify
-
   return (
     <div className="">
       {threadLists?.map((thread) => {
+        //Preventing Cross-Site Scripting using DOMPurify
         const purifiedData = DOMPurify.sanitize(thread?.body);
         return (
           <div
