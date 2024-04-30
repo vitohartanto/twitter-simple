@@ -1,8 +1,19 @@
 import landscapeBackground from '../nicePageLeaderboards.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { asyncSeeLeaderboards } from '../states/leaderboards/action';
 
 const LeaderboardsPage = () => {
+  const leaderboards = useSelector((state) => state.leaderboards || []);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(asyncSeeLeaderboards());
+  }, [dispatch]);
+
   return (
     <div>
       <ImageBackground
@@ -22,19 +33,23 @@ const LeaderboardsPage = () => {
             Score
           </h1>
         </div>
-        <div>
-          <div className="mb-2 flex justify-between p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-            <h1 className="text-white">Dimas Saputra</h1>
-            <p className="text-white">25</p>
-          </div>
-          <div className="mb-2 flex justify-between p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-            <h1 className="text-white">Dicoding</h1>
-            <p className="text-white">21</p>
-          </div>
-          <div className="mb-2 flex justify-between p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-            <h1 className="text-white">Vito</h1>
-            <p className="text-white">19</p>
-          </div>
+        <div className="mb-8">
+          {leaderboards.map((leaderboard) => (
+            <div
+              key={leaderboard.user.id}
+              className="mb-2 flex items-center justify-between p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+            >
+              <div className="flex items-center">
+                <img
+                  src={leaderboard.user.avatar}
+                  alt={`user-${leaderboard.user.name}`}
+                  className="rounded-full w-10 h-10 mr-2"
+                />
+                <h1 className="text-white">{leaderboard.user.name}</h1>
+              </div>
+              <p className="text-white">{leaderboard.score}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

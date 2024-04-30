@@ -19,7 +19,7 @@ const ThreadLists = ({ threadLists }) => {
             className="mt-8 p-6 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
             key={thread.id}
           >
-            <Link to={`/threads/%{thread?.id}`}>
+            <Link to={`/threads/${thread?.id}`}>
               <h1 className="underline text-white text-xl mb-3 font-bold">
                 {thread?.title}
               </h1>
