@@ -33,11 +33,11 @@ const DownVoteThreadButton = ({ threadId, downVotesBy }) => {
     <button title="Up vote" onClick={onDownVoteHandler}>
       <div className="flex items-center">
         {isDislikedThread ? (
-          <FaRegThumbsDown className="text-red-500 fill-red-500" />
+          <FaRegThumbsDown className="text-red-500 fill-red-500 mr-2" />
         ) : (
-          <FaRegThumbsDown className="" />
+          <FaRegThumbsDown className="mr-2" />
         )}
-        <span>{downVotesBy?.length}</span>
+        <span className="mr-2">{downVotesBy?.length}</span>
       </div>
     </button>
   );

@@ -60,28 +60,27 @@ const HomePage = () => {
           <h1 className="mb-2  font-medium text-white text-xl px-4 py-2 inline backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             Popular Category
           </h1>
-          <div className="mt-6 flex flex-wrap">
+          <div className="mt-6 flex flex-wrap items-center">
             {threadCategory?.map((thread) => (
               <button
                 key={thread.id}
                 onClick={() => setCategory(thread.category)}
-                className="mr-4 mb-2 text-center inline text-white text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+                className="mb-2 focus:bg-[rgba(255,255,255,0.90)] focus:text-[#191919] mr-4  text-center inline text-white text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
               >
                 <span>{`#${thread.category}`}</span>
               </button>
             ))}
-
-            <p className="mr-4 mb-2 text-center inline text-[#191919] text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]">
-              #document
-            </p>
-            <p className="mr-4 mb-2 text-center inline text-[#191919] text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]">
-              #document
-            </p>
+            <button
+              onClick={() => setCategory('')}
+              className="mr-4 mb-2  text-center inline text-[#191919] text-sm px-4 py-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]"
+            >
+              See All
+            </button>
           </div>
         </div>
 
         {/* AVAILABLE DISCUSSIONS */}
-        <div className="mt-8 ml-6">
+        <div className="mt-8 ml-6 mb-8">
           <h1 className="mb-2 font-medium text-white text-xl px-4 py-2 inline backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             Available Discussions
           </h1>

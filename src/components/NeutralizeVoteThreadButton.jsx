@@ -36,11 +36,10 @@ const NeutralizeVoteThreadButton = ({ threadId, upVotesBy, downVotesBy }) => {
     <button title="Up vote" onClick={onNeutralizeVoteHandler}>
       <div className="flex items-center">
         {isNeutralizedThread ? (
-          <MdSentimentNeutral className="text-blue-500 fill-blue-500" />
+          <MdSentimentNeutral className="text-blue-500 fill-blue-500 mr-2" />
         ) : (
-          <MdSentimentNeutral className="" />
+          <MdSentimentNeutral className="mr-2" />
         )}
-        <span>{upVotesBy?.length}</span>
       </div>
     </button>
   );

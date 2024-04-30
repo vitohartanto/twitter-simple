@@ -32,11 +32,11 @@ const UpVoteThreadButton = ({ threadId, upVotesBy }) => {
     <button title="Up vote" onClick={onUpVoteHandler}>
       <div className="flex items-center">
         {isLikedThread ? (
-          <FaRegThumbsUp className="text-green-500 fill-green-500" />
+          <FaRegThumbsUp className="text-green-500 fill-green-500 mr-2" />
         ) : (
-          <FaRegThumbsUp className="" />
+          <FaRegThumbsUp className="mr-2" />
         )}
-        <span>{upVotesBy?.length}</span>
+        <span className="mr-2">{upVotesBy?.length}</span>
       </div>
     </button>
   );
