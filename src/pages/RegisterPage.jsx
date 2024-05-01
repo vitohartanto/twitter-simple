@@ -1,6 +1,6 @@
-import landscapeBackground from '../nicePageRegister.png';
+import landscapeBackground from '../img/nicePageRegister.png';
 import ImageBackground from '../components/ImageBackground';
-import threadNestLogo from '../threadNestLogo.png';
+import threadNestLogo from '../img/threadNestLogo.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';

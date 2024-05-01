@@ -1,4 +1,4 @@
-import landscapeBackground from '../nicePageLeaderboards.png';
+import landscapeBackground from '../img/nicePageLeaderboards.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 import { useSelector } from 'react-redux';

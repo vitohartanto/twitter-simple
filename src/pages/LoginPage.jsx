@@ -1,6 +1,6 @@
-import landscapeBackground from '../nicePageSignIn.png';
+import landscapeBackground from '../img/nicePageSignIn.png';
 import ImageBackground from '../components/ImageBackground';
-import threadNestLogo from '../threadNestLogo.png';
+import threadNestLogo from '../img/threadNestLogo.png';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { asyncSetAuthUser } from '../states/authUser/action';

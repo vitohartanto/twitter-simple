@@ -1,4 +1,4 @@
-import landscapeBackground from '../nicePageDetails.png';
+import landscapeBackground from '../img/nicePageDetails.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 import { Link, useParams } from 'react-router-dom';

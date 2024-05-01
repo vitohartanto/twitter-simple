@@ -1,4 +1,4 @@
-import landscapeBackground from '../nicePageAddTalk.png';
+import landscapeBackground from '../img/nicePageAddTalk.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 import BackButton from '../components/BackButton';

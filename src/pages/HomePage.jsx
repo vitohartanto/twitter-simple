@@ -1,4 +1,4 @@
-import landscapeBackground from '../nicePageSignIn.png';
+import landscapeBackground from '../img/nicePageSignIn.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
 
