@@ -145,7 +145,7 @@ const asyncNeutralizeVoteThreadDetail = (threadId) => {
   return async (dispatch, getState) => {
     const { authUser } = getState();
     dispatch(
-      neutralizeVoteCommentThreadDetailActionCreator({
+      neutralizeVoteThreadDetailActionCreator({
         threadId,
         userId: authUser.id,
       })

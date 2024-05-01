@@ -1,7 +1,6 @@
 import landscapeBackground from '../nicePageDetails.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
-import { FaRegThumbsUp, FaRegThumbsDown, FaRegComment } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {
@@ -58,7 +57,7 @@ const DetailPage = () => {
             {threadDetail?.title}
           </h1>
           <p className="text-white text-lg mb-4">{`#${threadDetail?.category}`}</p>
-          <p className="text-white text-2xl mb-4">{parse(purifiedData)}</p>
+          <h1 className="text-white text-2xl mb-4">{parse(purifiedData)}</h1>
           <div className="flex flex-wrap items-center mb-8">
             <div className="flex text-white text-2xl mb-2 mr-10">
               <UpVoteThreadButton
@@ -114,17 +113,17 @@ const DetailPage = () => {
             </button>
           </div>
         </div>
-        <div className="mb-6 py-6 px-4 mt-6 text-white backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
+        <div className="mb-8 py-6 px-4 mt-6 text-white backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
           <h1 className="text-white text-2xl font-bold mb-2 ml-4">
             Comments {`(${threadDetail?.comments?.length})`}
           </h1>
           {threadDetail?.comments?.length > 0 ? (
             <CommentLists comments={threadDetail?.comments} />
           ) : (
-            <p>NOT FOUND</p>
+            <p className="ml-4 text-lg my-4">No Comments Yet</p>
           )}
 
-          <div className="p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
+          {/* <div className="p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             <div className="flex justify-between mb-2">
               <p>Tovi</p>
               <p>2 minutes ago</p>
@@ -136,20 +135,7 @@ const DetailPage = () => {
               <FaRegThumbsDown className="mr-2" />
               <p className="mr-4">1</p>
             </div>
-          </div>
-          <div className="p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-            <div className="flex justify-between mb-2">
-              <p>Tovi</p>
-              <p>2 minutes ago</p>
-            </div>
-            <p className="mb-4">Ini adalah comment</p>
-            <div className="flex text-white text-xl mb-2">
-              <FaRegThumbsUp className="mr-2" />
-              <p className="mr-4">1</p>
-              <FaRegThumbsDown className="mr-2" />
-              <p className="mr-4">1</p>
-            </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
