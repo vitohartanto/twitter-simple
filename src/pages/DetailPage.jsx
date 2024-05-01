@@ -43,7 +43,7 @@ const DetailPage = () => {
     <div>
       <ImageBackground
         src={landscapeBackground}
-        hash="[fHJ8m}qJ7I=afR+fks.13EjxFockTocoLWCs,kAWVnkWDWDfibabFfioLf7oKj[WVayR+WVoKoe"
+        hash="[UEX?|rBDNW+PXiuVsa3O=iv$nkC5Ys:wIavvzW?Nxn~o6f6oaj^ROSzbIWBr^nhozbbXRbHRjjF"
       />
       <NavigationBar />
       <div className="px-4 pt-6">
@@ -122,20 +122,6 @@ const DetailPage = () => {
           ) : (
             <p className="ml-4 text-lg my-4">No Comments Yet</p>
           )}
-
-          {/* <div className="p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-            <div className="flex justify-between mb-2">
-              <p>Tovi</p>
-              <p>2 minutes ago</p>
-            </div>
-            <p className="mb-4">Ini adalah comment</p>
-            <div className="flex text-white text-xl mb-2">
-              <FaRegThumbsUp className="mr-2" />
-              <p className="mr-4">1</p>
-              <FaRegThumbsDown className="mr-2" />
-              <p className="mr-4">1</p>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

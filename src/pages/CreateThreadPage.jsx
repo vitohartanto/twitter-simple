@@ -53,36 +53,36 @@ const CreateThreadPage = () => {
     <div className="">
       <ImageBackground
         src={landscapeBackground}
-        hash="[fHJ8m}qJ7I=afR+fks.13EjxFockTocoLWCs,kAWVnkWDWDfibabFfioLf7oKj[WVayR+WVoKoe"
+        hash="[gJlDuT_MeWU%jbxoHoI5YaQxZaMO8RPs:kBIqR6j?XRx[nhRkbIbJn%kVfkM~fhofWCR*R*W;e."
       />
       <NavigationBar />
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
+      <div className="mt-8 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
         <BackButton />
         <form
           onSubmit={onSubmitHandler}
           className=" py-4 px-6 sm:px-8 sm:py-6 w-[320px] sm:w-[480px] backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
         >
           <h1 className="text-3xl text-white font-bold mb-4 mt-2">
-            Add New Talk
+            Create Thread
           </h1>
 
           <div className="flex flex-col">
             <input
               type="text"
-              placeholder="Talk's Title"
+              placeholder="Thread's Title"
               value={title}
               onChange={onChangeInputTitle}
               className="mb-4 p-4 text-base text-[white] font-medium backdrop-blur-[2px] border-2 border-white shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
             />
             <input
               type="text"
-              placeholder="Talk's Category"
+              placeholder="Thread's Category"
               value={category}
               onChange={onChangeInputCategory}
               className="mb-4 p-4 text-base text-[white] font-medium backdrop-blur-[2px] border-2 border-white shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
             />
             <div
-              data-text="Talk's body here, with support for rich text formatting such as bold, italic, underline, and more."
+              data-text="Thread's body here, with support for rich text formatting such as bold, italic, underline, and more."
               name="body"
               type="text"
               onInput={onChangeInputBody}

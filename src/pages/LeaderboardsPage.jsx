@@ -18,7 +18,7 @@ const LeaderboardsPage = () => {
     <div>
       <ImageBackground
         src={landscapeBackground}
-        hash="[fHJ8m}qJ7I=afR+fks.13EjxFockTocoLWCs,kAWVnkWDWDfibabFfioLf7oKj[WVayR+WVoKoe"
+        hash="[HD1_gMJ01yWL0RRM1$}NXIcaR-9_,noFrk.5PxGrdNxVycBx?s:xvRPr?xCJ*ahkEWA+ia{XNob"
       />
       <NavigationBar />
       <div className="mt-8 ml-6 pr-6">
@@ -45,9 +45,9 @@ const LeaderboardsPage = () => {
                   alt={`user-${leaderboard.user.name}`}
                   className="rounded-full w-10 h-10 mr-2"
                 />
-                <h1 className="text-white">{leaderboard.user.name}</h1>
+                <h1 className="text-white text-lg">{leaderboard.user.name}</h1>
               </div>
-              <p className="text-white">{leaderboard.score}</p>
+              <p className="text-white text-lg">{leaderboard.score}</p>
             </div>
           ))}
         </div>

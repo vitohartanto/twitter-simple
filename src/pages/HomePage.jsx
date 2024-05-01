@@ -48,15 +48,14 @@ const HomePage = () => {
     <div>
       <ImageBackground
         src={landscapeBackground}
-        hash="[EHdHa^axtWV5xNsAHwc04E99zV[]|TJ-kS4}*tjNd$yR7w3IqV]5?9z=sW=TvtO$~t4I[s-M}Rn"
+        hash="[MK-8*5+BQ$k}2tSFdgH{qoGw3W?^Xw@w{J89cs=orwd]$n|%3jFMnXSoxodrrWCxHxZott4WZNZ"
       />
       <AddThreadButton />
       <NavigationBar />
 
-      <div className="pr-6">
+      <div className="pr-6 flex flex-col min-[850px]:flex-row">
         {/* POPULAR CATEGORY */}
-
-        <div className="mt-8 ml-6">
+        <div className="mt-8 ml-6 grow">
           <h1 className="mb-2  font-medium text-white text-xl px-4 py-2 inline backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             Popular Category
           </h1>
@@ -80,7 +79,7 @@ const HomePage = () => {
         </div>
 
         {/* AVAILABLE DISCUSSIONS */}
-        <div className="mt-8 ml-6 mb-8">
+        <div className="mt-8 ml-6 mb-8 grow-[10]">
           <h1 className="mb-2 font-medium text-white text-xl px-4 py-2 inline backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             Available Discussions
           </h1>
