@@ -71,11 +71,10 @@ const asyncSeeThreads = () => {
 const asyncCreateThread = ({ title, category, body }) => {
   return async (dispatch) => {
     try {
-      console.log('DISINi');
       const thread = await api.createThread(title, category, body);
-      console.log('DISINa');
+
       dispatch(createThreadActionCreator(thread));
-      console.log('DISINO');
+
       toast.success('Successfully add new thread');
     } catch (error) {
       toast.error(error.message);

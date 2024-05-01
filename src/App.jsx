@@ -17,9 +17,6 @@ import { asyncPreloadProcess } from './states/isPreload/action';
 const App = () => {
   const authUser = useSelector((state) => state.authUser || null);
   const isPreload = useSelector((state) => state.isPreload || false);
-  // const { authUser = null, isPreload = false } = useSelector(
-  //   (states) => states
-  // );
 
   const dispatch = useDispatch();
 

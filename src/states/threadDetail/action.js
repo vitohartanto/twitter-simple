@@ -63,7 +63,7 @@ const downVoteThreadDetailActionCreator = ({ threadId, userId }) => {
   };
 };
 
-// Comment Feature
+// For Comments
 const createCommentThreadDetailActionCreator = ({ threadId, comment }) => {
   return {
     type: THREAD_DETAIL_ACTION_TYPES.CREATE_COMMENT_THREAD_DETAIL,

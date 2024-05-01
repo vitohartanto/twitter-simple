@@ -26,7 +26,7 @@ const ThreadLists = ({ threadLists }) => {
             </Link>
 
             <h1 className="text-white mb-4">
-              {parse(purifiedData.slice(0, 150))}
+              {parse(purifiedData.slice(0, 120))}
               <span>...</span>
             </h1>
             <div className="flex flex-wrap">

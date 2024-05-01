@@ -18,6 +18,7 @@ const store = configureStore({
     leaderboards: leaderboardsReducer,
     loadingBar: loadingBarReducer,
   },
+
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
 
