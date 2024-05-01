@@ -22,7 +22,7 @@ const asyncPreloadProcess = () => {
     dispatch(showLoading());
 
     try {
-      const authUser = await api.getOwnProfile();
+      const authUser = await api.seeOwnProfile();
       dispatch(setAuthUserActionCreator(authUser));
     } catch (error) {
       dispatch(setAuthUserActionCreator(null));
