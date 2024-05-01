@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncNeutralizeVoteThread } from '../states/threads/action';
 import { asyncNeutralizeVoteThreadDetail } from '../states/threadDetail/action';
-import { FaRegThumbsUp } from 'react-icons/fa';
+
 import { MdSentimentNeutral } from 'react-icons/md';
 
 const NeutralizeVoteThreadButton = ({ threadId, upVotesBy, downVotesBy }) => {

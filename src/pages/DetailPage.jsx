@@ -17,6 +17,7 @@ import NeutralizeVoteThreadButton from '../components/NeutralizeVoteThreadButton
 import { postedAt } from '../utils/postedAt';
 import DOMPurify from 'dompurify';
 import { useState } from 'react';
+import CommentLists from '../components/CommentLists';
 
 const DetailPage = () => {
   const [comment, setComment] = useState('');
@@ -73,10 +74,6 @@ const DetailPage = () => {
                 threadId={threadDetail?.id}
                 downVotesBy={threadDetail?.downVotesBy}
               />
-              {/* <div className="flex items-center">
-                <FaRegComment className="mr-2" />
-                <p className="mr-4">{threadDetail?.totalComments}</p>
-              </div> */}
             </div>
             <div className="flex text-white items-center mb-2">
               <p className="mr-2 text-sm">
@@ -101,7 +98,7 @@ const DetailPage = () => {
             </p>
 
             <div
-              data-text="Talk's comment here, with support for rich text formatting such as bold, italic, underline, and more."
+              data-text="Thread's comment here, with support for rich text formatting such as bold, italic, underline, and more."
               name="body"
               type="text"
               onInput={onChangeComment}
@@ -119,8 +116,14 @@ const DetailPage = () => {
         </div>
         <div className="mb-6 py-6 px-4 mt-6 text-white backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
           <h1 className="text-white text-2xl font-bold mb-2 ml-4">
-            Comments (2)
+            Comments {`(${threadDetail?.comments?.length})`}
           </h1>
+          {threadDetail?.comments?.length > 0 ? (
+            <CommentLists comments={threadDetail?.comments} />
+          ) : (
+            <p>NOT FOUND</p>
+          )}
+
           <div className="p-4 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
             <div className="flex justify-between mb-2">
               <p>Tovi</p>
