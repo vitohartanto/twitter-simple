@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useCallback, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,6 +44,12 @@ const NeutralizeVoteThreadButton = ({ threadId, upVotesBy, downVotesBy }) => {
       </div>
     </button>
   );
+};
+
+NeutralizeVoteThreadButton.propTypes = {
+  threadId: PropTypes.string,
+  upVotesBy: PropTypes.array,
+  downVotesBy: PropTypes.array,
 };
 
 export default NeutralizeVoteThreadButton;

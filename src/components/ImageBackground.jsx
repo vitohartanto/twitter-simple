@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Blurhash } from 'react-blurhash';
 
@@ -25,6 +26,11 @@ const ImageBackground = ({ src, hash }) => {
       />
     </>
   );
+};
+
+ImageBackground.propTypes = {
+  src: PropTypes.string,
+  hash: PropTypes.string,
 };
 
 export default ImageBackground;

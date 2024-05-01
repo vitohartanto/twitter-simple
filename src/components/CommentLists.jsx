@@ -1,4 +1,5 @@
 import Comment from './Comment';
+import PropTypes from 'prop-types';
 
 const CommentLists = ({ comments }) => {
   return (
@@ -8,6 +9,10 @@ const CommentLists = ({ comments }) => {
       })}
     </div>
   );
+};
+
+CommentLists.propTypes = {
+  comments: PropTypes.array,
 };
 
 export default CommentLists;

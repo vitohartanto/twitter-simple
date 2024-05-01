@@ -1,4 +1,5 @@
 import DOMPurify from 'dompurify';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMemo } from 'react';
 import {
@@ -99,6 +100,10 @@ const Comment = ({ comment }) => {
       </div>
     </div>
   );
+};
+
+Comment.propTypes = {
+  comment: PropTypes.object,
 };
 
 export default Comment;

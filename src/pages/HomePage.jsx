@@ -12,7 +12,7 @@ import ThreadLists from '../components/ThreadLists';
 const HomePage = () => {
   const threads = useSelector((state) => state.threads || []);
   const users = useSelector((state) => state.users || []);
-  // const { threads = [], users = [] } = useSelector((states) => states);
+
   const dispatch = useDispatch();
 
   const [category, setCategory] = useState('');

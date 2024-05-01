@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
@@ -70,6 +71,10 @@ const ThreadLists = ({ threadLists }) => {
       })}
     </div>
   );
+};
+
+ThreadLists.propTypes = {
+  threadLists: PropTypes.array,
 };
 
 export default ThreadLists;
