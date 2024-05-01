@@ -35,7 +35,7 @@ const LoginPage = () => {
         hash="[MK^pW5+BQ$k}2tSFegH{qoGw3W?}#w@w{J89cs=orwd]$n|%3jFMnXSoxodrrWCxHxZott4WGNZ"
       />
       <div className="p-4 absolute top-6 left-6 w-[160px] backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
-        <img src={threadNestLogo} alt="" />
+        <img src={threadNestLogo} alt="Thread Nest Logo" />
       </div>
       <form
         onSubmit={onSubmitHandler}

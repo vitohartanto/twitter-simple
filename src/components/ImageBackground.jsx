@@ -20,7 +20,7 @@ const ImageBackground = ({ src, hash }) => {
       </div>
       <img
         src={src}
-        alt=""
+        alt="Image Background"
         className="w-screen h-screen fixed z-[-100]"
         style={{ display: !imageLoaded ? 'none' : 'inline' }}
       />
