@@ -7,28 +7,24 @@ const LEADERBOARDS_ACTION_TYPES = {
   SEE_LEADERBOARDS: 'leaderboards/SEE_LEADERBOARDS',
 };
 
-const seeLeaderboardsActionCreator = (leaderboards) => {
-  return {
-    type: LEADERBOARDS_ACTION_TYPES.SEE_LEADERBOARDS,
-    payload: {
-      leaderboards,
-    },
-  };
-};
+const seeLeaderboardsActionCreator = (leaderboards) => ({
+  type: LEADERBOARDS_ACTION_TYPES.SEE_LEADERBOARDS,
+  payload: {
+    leaderboards,
+  },
+});
 
-const asyncSeeLeaderboards = () => {
-  return async (dispatch) => {
-    dispatch(showLoading());
+const asyncSeeLeaderboards = () => async (dispatch) => {
+  dispatch(showLoading());
 
-    try {
-      const leaderboards = await api.seeLeaderboards();
-      dispatch(seeLeaderboardsActionCreator(leaderboards));
-    } catch (error) {
-      toast.error(error.message);
-    }
+  try {
+    const leaderboards = await api.seeLeaderboards();
+    dispatch(seeLeaderboardsActionCreator(leaderboards));
+  } catch (error) {
+    toast.error(error.message);
+  }
 
-    dispatch(hideLoading());
-  };
+  dispatch(hideLoading());
 };
 
 export { seeLeaderboardsActionCreator, asyncSeeLeaderboards };

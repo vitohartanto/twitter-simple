@@ -34,8 +34,8 @@ const threadDetailReducer = (threadDetail = [], action = {}) => {
           : threadDetail.upVotesBy.concat([action.payload.userId]),
         downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
           ? threadDetail.downVotesBy.filter(
-              (id) => id !== action.payload.userId
-            )
+            (id) => id !== action.payload.userId,
+          )
           : threadDetail.downVotesBy,
       };
 
@@ -47,8 +47,8 @@ const threadDetailReducer = (threadDetail = [], action = {}) => {
           : threadDetail.upVotesBy,
         downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
           ? threadDetail.downVotesBy.filter(
-              (id) => id !== action.payload.userId
-            )
+            (id) => id !== action.payload.userId,
+          )
           : threadDetail.downVotesBy,
       };
 
@@ -60,8 +60,8 @@ const threadDetailReducer = (threadDetail = [], action = {}) => {
           : threadDetail.upVotesBy,
         downVotesBy: threadDetail.downVotesBy.includes(action.payload.userId)
           ? threadDetail.downVotesBy.filter(
-              (id) => id !== action.payload.userId
-            )
+            (id) => id !== action.payload.userId,
+          )
           : threadDetail.downVotesBy.concat([action.payload.userId]),
       };
 
@@ -77,8 +77,8 @@ const threadDetailReducer = (threadDetail = [], action = {}) => {
                 : comment.upVotesBy.concat([action.payload.userId]),
               downVotesBy: comment.downVotesBy.includes(action.payload.userId)
                 ? comment.downVotesBy.filter(
-                    (id) => id !== action.payload.userId
-                  )
+                  (id) => id !== action.payload.userId,
+                )
                 : comment.downVotesBy,
             };
           }
@@ -98,8 +98,8 @@ const threadDetailReducer = (threadDetail = [], action = {}) => {
                 : comment.upVotesBy,
               downVotesBy: comment.downVotesBy.includes(action.payload.userId)
                 ? comment.downVotesBy.filter(
-                    (id) => id !== action.payload.userId
-                  )
+                  (id) => id !== action.payload.userId,
+                )
                 : comment.downVotesBy,
             };
           }
@@ -119,8 +119,8 @@ const threadDetailReducer = (threadDetail = [], action = {}) => {
                 : comment.upVotesBy,
               downVotesBy: comment.downVotesBy.includes(action.payload.userId)
                 ? comment.downVotesBy.filter(
-                    (id) => id !== action.payload.userId
-                  )
+                  (id) => id !== action.payload.userId,
+                )
                 : comment.downVotesBy.concat([action.payload.userId]),
             };
           }

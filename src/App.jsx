@@ -1,20 +1,18 @@
-import LoginPage from './pages/LoginPage';
-import HomePage from './pages/HomePage';
+import React, { useEffect } from 'react';
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import LeaderboardsPage from './pages/LeaderboardsPage';
 import RegisterPage from './pages/RegisterPage';
 import CreateThreadPage from './pages/CreateThreadPage';
 import DetailPage from './pages/DetailPage';
+import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage';
 import Loading from './components/Loading';
 import NotFound404Page from './pages/NotFound404Page';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-
 import { asyncPreloadProcess } from './states/isPreload/action';
 
-const App = () => {
+function App() {
   const authUser = useSelector((state) => state.authUser || null);
   const isPreload = useSelector((state) => state.isPreload || false);
 
@@ -54,6 +52,6 @@ const App = () => {
       </Routes>
     </>
   );
-};
+}
 
 export default App;

@@ -1,5 +1,5 @@
 const api = (() => {
-  const BASE_URL = `https://forum-api.dicoding.dev/v1`;
+  const BASE_URL = 'https://forum-api.dicoding.dev/v1';
 
   function putAccessToken(token) {
     localStorage.setItem('accessToken', token);
@@ -197,7 +197,7 @@ const api = (() => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     const responseJson = await response.json();
@@ -217,7 +217,7 @@ const api = (() => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     const responseJson = await response.json();
@@ -237,7 +237,7 @@ const api = (() => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     const responseJson = await response.json();
@@ -258,7 +258,7 @@ const api = (() => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ content }),
-      }
+      },
     );
 
     const responseJson = await response.json();
@@ -284,7 +284,7 @@ const api = (() => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     const responseJson = await response.json();
@@ -304,7 +304,7 @@ const api = (() => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     const responseJson = await response.json();
@@ -324,7 +324,7 @@ const api = (() => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     const responseJson = await response.json();
