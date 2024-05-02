@@ -1,14 +1,14 @@
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import toast from 'react-hot-toast';
+import { asyncRegisterUser } from '../states/users/action';
+import useInput from '../hooks/useInput';
 import landscapeBackground from '../img/nicePageRegister.png';
 import ImageBackground from '../components/ImageBackground';
 import threadNestLogo from '../img/threadNestLogo.png';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { asyncRegisterUser } from '../states/users/action';
-import useInput from '../hooks/useInput';
-import toast from 'react-hot-toast';
 
-const RegisterPage = () => {
+function RegisterPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -69,7 +69,10 @@ const RegisterPage = () => {
             onChange={onChangePasswordHandler}
             className="p-4 text-base text-[white] font-medium backdrop-blur-[2px] border-2 border-white shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
           />
-          <button className="text-xl text-[#191919] hover:text-white hover:bg-[rgba(25,25,25,0.90)] hover:border-2 hover:border-white px-4 py-2 font-medium mt-4 mb-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]">
+          <button
+            type="submit"
+            className="text-xl text-[#191919] hover:text-white hover:bg-[rgba(25,25,25,0.90)] hover:border-2 hover:border-white px-4 py-2 font-medium mt-4 mb-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]"
+          >
             Register
           </button>
         </div>
@@ -82,6 +85,6 @@ const RegisterPage = () => {
       </form>
     </div>
   );
-};
+}
 
 export default RegisterPage;
