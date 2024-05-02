@@ -11,12 +11,8 @@ function CommentLists({ comments }) {
 }
 
 CommentLists.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
   comments: PropTypes.array,
-};
-
-CommentLists.defaultProps = {
-  comments: null, // Provide a default value
 };
 
 export default CommentLists;

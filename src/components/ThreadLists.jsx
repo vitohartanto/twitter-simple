@@ -10,7 +10,7 @@ import NeutralizeVoteThreadButton from './NeutralizeVoteThreadButton';
 import DownVoteThreadButton from './DownVoteThreadButton';
 import { postedAt } from '../utils/postedAt';
 
-function ThreadLists({ threadLists }) {
+function ThreadLists({ threadLists = [] }) {
   return (
     <div className="">
       {threadLists?.map((thread) => {
@@ -76,12 +76,8 @@ function ThreadLists({ threadLists }) {
 }
 
 ThreadLists.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
   threadLists: PropTypes.array,
-};
-
-ThreadLists.defaultProps = {
-  threadLists: null,
 };
 
 export default ThreadLists;

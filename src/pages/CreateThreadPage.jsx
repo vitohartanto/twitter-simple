@@ -16,8 +16,9 @@ function CreateThreadPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const onCreateThread = ({ inputTitle, inputCategory, inputBody }) => {
-    dispatch(asyncCreateThread({ inputTitle, inputCategory, inputBody }));
+  // eslint-disable-next-line no-shadow
+  const onCreateThread = ({ title, category, body }) => {
+    dispatch(asyncCreateThread({ title, category, body }));
   };
 
   const onChangeInputTitle = (event) => {

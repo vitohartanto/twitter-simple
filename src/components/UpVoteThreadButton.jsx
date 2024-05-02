@@ -42,13 +42,10 @@ function UpVoteThreadButton({ threadId, upVotesBy }) {
 }
 
 UpVoteThreadButton.propTypes = {
-  threadId: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+  // eslint-disable-next-line react/require-default-props
+  threadId: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
   upVotesBy: PropTypes.array,
-};
-
-UpVoteThreadButton.defaultProps = {
-  upVotesBy: null,
 };
 
 export default UpVoteThreadButton;

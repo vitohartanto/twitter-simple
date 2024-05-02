@@ -42,13 +42,10 @@ function DownVoteThreadButton({ threadId, downVotesBy }) {
 }
 
 DownVoteThreadButton.propTypes = {
-  threadId: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
+  // eslint-disable-next-line react/require-default-props
+  threadId: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
   downVotesBy: PropTypes.array,
-};
-
-DownVoteThreadButton.defaultProps = {
-  downVotesBy: null,
 };
 
 export default DownVoteThreadButton;

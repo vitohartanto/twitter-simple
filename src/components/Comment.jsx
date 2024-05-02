@@ -99,12 +99,8 @@ function Comment({ comment }) {
 }
 
 Comment.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
+  // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
   comment: PropTypes.object,
-};
-
-Comment.defaultProps = {
-  comment: null, // Provide a default value
 };
 
 export default Comment;
