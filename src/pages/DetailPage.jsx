@@ -1,24 +1,24 @@
-import landscapeBackground from '../img/nicePageDetails.png';
-import ImageBackground from '../components/ImageBackground';
-import NavigationBar from '../components/NavigationBar';
+import React, { useState, useEffect } from 'react';
+import parse from 'html-react-parser';
 import { Link, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import DOMPurify from 'dompurify';
 import {
   asyncCreateCommentThreadDetail,
   asyncSeeThreadDetail,
 } from '../states/threadDetail/action';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import parse from 'html-react-parser';
+
 import UpVoteThreadButton from '../components/UpVoteThreadButton';
 import DownVoteThreadButton from '../components/DownVoteThreadButton';
 import NeutralizeVoteThreadButton from '../components/NeutralizeVoteThreadButton';
 import { postedAt } from '../utils/postedAt';
-import DOMPurify from 'dompurify';
-import { useState } from 'react';
-import CommentLists from '../components/CommentLists';
 
-const DetailPage = () => {
+import CommentLists from '../components/CommentLists';
+import landscapeBackground from '../img/nicePageDetails.png';
+import ImageBackground from '../components/ImageBackground';
+import NavigationBar from '../components/NavigationBar';
+
+function DetailPage() {
   const [comment, setComment] = useState('');
   const { threadId } = useParams();
   const threadDetail = useSelector((state) => state.threadDetail);
@@ -107,6 +107,7 @@ const DetailPage = () => {
             />
             <button
               onClick={onCreateComment}
+              type="submit"
               className="mt-6 text-xl text-[#191919] hover:text-white hover:bg-[rgba(25,25,25,0.90)] hover:border-2 hover:border-white px-4 py-2 font-medium  mb-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]"
             >
               Save Comment
@@ -115,7 +116,8 @@ const DetailPage = () => {
         </div>
         <div className="mb-8 py-6 px-4 mt-6 text-white backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
           <h1 className="text-white text-2xl font-bold mb-2 ml-4">
-            Comments {`(${threadDetail?.comments?.length})`}
+            Comments
+            {`(${threadDetail?.comments?.length})`}
           </h1>
           {threadDetail?.comments?.length > 0 ? (
             <CommentLists comments={threadDetail?.comments} />
@@ -126,6 +128,6 @@ const DetailPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default DetailPage;
