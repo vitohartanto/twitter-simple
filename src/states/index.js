@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { loadingBarReducer } from 'react-redux-loading-bar';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { thunk } from 'redux-thunk';
 import authUserReducer from './authUser/reducer';
 import isPreloadReducer from './isPreload/reducer';
