@@ -1,8 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
 import { Blurhash } from 'react-blurhash';
 
-const ImageBackground = ({ src, hash }) => {
+function ImageBackground({ src, hash }) {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -20,17 +20,17 @@ const ImageBackground = ({ src, hash }) => {
       </div>
       <img
         src={src}
-        alt="Image Background"
+        alt="Background"
         className="w-screen h-screen fixed z-[-100]"
         style={{ display: !imageLoaded ? 'none' : 'inline' }}
       />
     </>
   );
-};
+}
 
 ImageBackground.propTypes = {
-  src: PropTypes.string,
-  hash: PropTypes.string,
+  src: PropTypes.string.isRequired,
+  hash: PropTypes.string.isRequired,
 };
 
 export default ImageBackground;

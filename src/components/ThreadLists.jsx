@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
@@ -9,15 +10,16 @@ import NeutralizeVoteThreadButton from './NeutralizeVoteThreadButton';
 import DownVoteThreadButton from './DownVoteThreadButton';
 import { postedAt } from '../utils/postedAt';
 
-const ThreadLists = ({ threadLists }) => {
+function ThreadLists({ threadLists }) {
   return (
     <div className="">
       {threadLists?.map((thread) => {
-        //Preventing Cross-Site Scripting using DOMPurify
+        // Preventing Cross-Site Scripting using DOMPurify
         const purifiedData = DOMPurify.sanitize(thread?.body);
         return (
           <div
-            className="mt-8 p-6 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+            className="mt-8 p-6 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)]
+            shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
             key={thread.id}
           >
             <Link to={`/threads/${thread?.id}`}>
@@ -71,10 +73,15 @@ const ThreadLists = ({ threadLists }) => {
       })}
     </div>
   );
-};
+}
 
 ThreadLists.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   threadLists: PropTypes.array,
+};
+
+ThreadLists.defaultProps = {
+  threadLists: null,
 };
 
 export default ThreadLists;

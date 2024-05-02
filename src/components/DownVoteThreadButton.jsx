@@ -1,20 +1,18 @@
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { useCallback, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaRegThumbsDown } from 'react-icons/fa';
 import { asyncDownVoteThread } from '../states/threads/action';
 import { asyncDownVoteThreadDetail } from '../states/threadDetail/action';
-import { FaRegThumbsDown } from 'react-icons/fa';
 
-const DownVoteThreadButton = ({ threadId, downVotesBy }) => {
+function DownVoteThreadButton({ threadId, downVotesBy }) {
   const authUser = useSelector((state) => state.authUser || null);
 
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
-  const isDislikedThread = useMemo(() => {
-    return downVotesBy?.includes(authUser.id);
-  }, [downVotesBy, authUser]);
+  const isDislikedThread = useMemo(() => downVotesBy?.includes(authUser.id), [downVotesBy, authUser]);
 
   const onDownVoteHandler = useCallback(
     (event) => {
@@ -26,11 +24,11 @@ const DownVoteThreadButton = ({ threadId, downVotesBy }) => {
         dispatch(asyncDownVoteThreadDetail(threadId));
       }
     },
-    [pathname, dispatch, threadId]
+    [pathname, dispatch, threadId],
   );
 
   return (
-    <button title="Up vote" onClick={onDownVoteHandler}>
+    <button type="button" title="Up vote" onClick={onDownVoteHandler}>
       <div className="flex items-center">
         {isDislikedThread ? (
           <FaRegThumbsDown className="text-red-500 fill-red-500 mr-2" />
@@ -41,11 +39,16 @@ const DownVoteThreadButton = ({ threadId, downVotesBy }) => {
       </div>
     </button>
   );
-};
+}
 
 DownVoteThreadButton.propTypes = {
-  threadId: PropTypes.string,
+  threadId: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   downVotesBy: PropTypes.array,
+};
+
+DownVoteThreadButton.defaultProps = {
+  downVotesBy: null,
 };
 
 export default DownVoteThreadButton;

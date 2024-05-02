@@ -48,11 +48,16 @@ function DetailPage() {
       <NavigationBar />
       <div className="px-4 pt-6">
         <Link to="/" className="">
-          <p className="text-lg text-white px-4 py-2 inline backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
+          <p className="text-lg text-white px-4 py-2 inline backdrop-blur-[2px]
+          border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
+          rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+          >
             &lt; Back
           </p>
         </Link>
-        <div className="mt-6 p-6 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
+        <div className="mt-6 p-6 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)]
+        shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+        >
           <h1 className="text-white text-4xl mb-3 font-bold">
             {threadDetail?.title}
           </h1>
@@ -103,18 +108,25 @@ function DetailPage() {
               onInput={onChangeComment}
               value={comment}
               contentEditable
-              className="p-4 text-base text-[#848d87] font-medium backdrop-blur-[2px] border-2 border-white shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+              className="p-4 text-base text-[#848d87] font-medium backdrop-blur-[2px] border-2
+              border-white shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]"
             />
             <button
               onClick={onCreateComment}
               type="submit"
-              className="mt-6 text-xl text-[#191919] hover:text-white hover:bg-[rgba(25,25,25,0.90)] hover:border-2 hover:border-white px-4 py-2 font-medium  mb-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]"
+              className="mt-6 text-xl text-[#191919] hover:text-white
+              hover:bg-[rgba(25,25,25,0.90)] hover:border-2 hover:border-white px-4 py-2 font-medium
+              mb-2 backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)]
+              shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(255,255,255,0.90)]"
             >
               Save Comment
             </button>
           </div>
         </div>
-        <div className="mb-8 py-6 px-4 mt-6 text-white backdrop-blur-[2px] border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-[18px] bg-[rgba(25,25,25,0.90)]">
+        <div className="mb-8 py-6 px-4 mt-6 text-white backdrop-blur-[2px]
+        border-[1px_solid_rgba(255,255,255,0.18)] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
+        rounded-[18px] bg-[rgba(25,25,25,0.90)]"
+        >
           <h1 className="text-white text-2xl font-bold mb-2 ml-4">
             Comments
             {`(${threadDetail?.comments?.length})`}

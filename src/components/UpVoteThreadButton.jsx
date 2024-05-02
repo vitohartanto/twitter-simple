@@ -1,19 +1,18 @@
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { useCallback, useMemo } from 'react';
+
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaRegThumbsUp } from 'react-icons/fa';
 import { asyncUpVoteThread } from '../states/threads/action';
 import { asyncUpVoteThreadDetail } from '../states/threadDetail/action';
-import { FaRegThumbsUp } from 'react-icons/fa';
 
-const UpVoteThreadButton = ({ threadId, upVotesBy }) => {
+function UpVoteThreadButton({ threadId, upVotesBy }) {
   const authUser = useSelector((state) => state.authUser || null);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
-  const isLikedThread = useMemo(() => {
-    return upVotesBy?.includes(authUser.id);
-  }, [upVotesBy, authUser]);
+  const isLikedThread = useMemo(() => upVotesBy?.includes(authUser.id), [upVotesBy, authUser]);
 
   const onUpVoteHandler = useCallback(
     (event) => {
@@ -25,11 +24,11 @@ const UpVoteThreadButton = ({ threadId, upVotesBy }) => {
         dispatch(asyncUpVoteThreadDetail(threadId));
       }
     },
-    [pathname, dispatch, threadId]
+    [pathname, dispatch, threadId],
   );
 
   return (
-    <button title="Up vote" onClick={onUpVoteHandler}>
+    <button type="button" title="Up vote" onClick={onUpVoteHandler}>
       <div className="flex items-center">
         {isLikedThread ? (
           <FaRegThumbsUp className="text-green-500 fill-green-500 mr-2" />
@@ -40,11 +39,16 @@ const UpVoteThreadButton = ({ threadId, upVotesBy }) => {
       </div>
     </button>
   );
-};
+}
 
 UpVoteThreadButton.propTypes = {
-  threadId: PropTypes.string,
+  threadId: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   upVotesBy: PropTypes.array,
+};
+
+UpVoteThreadButton.defaultProps = {
+  upVotesBy: null,
 };
 
 export default UpVoteThreadButton;
