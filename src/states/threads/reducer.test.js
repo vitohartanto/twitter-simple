@@ -113,4 +113,115 @@ describe('threadsReducer function', () => {
     // Assert
     expect(nextState).toEqual([action.payload.thread, ...initialState]);
   });
+
+  it('should return the threads with the up voted thread when given by threads/UP_VOTE_THREAD action', () => {
+    // Arrange
+    const initialState = [
+      {
+        id: 'thread-1',
+        title: 'First Thread',
+        body: 'Hello world',
+        category: 'Percobaan',
+        createdAt: '2024-05-21T07:00:00.000Z',
+        ownerId: 'user-1',
+        totalComments: 0,
+        upVotesBy: [],
+        downVotesBy: [],
+      },
+    ];
+
+    const action = {
+      type: THREADS_ACTION_TYPES.UP_VOTE_THREAD,
+      payload: {
+        threadId: 'thread-1',
+        userId: 'user-1',
+      },
+    };
+
+    // Action
+    const nextState = threadsReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual([
+      {
+        ...initialState[0],
+        upVotesBy: [action.payload.userId],
+        downVotesBy: [],
+      },
+    ]);
+  });
+
+  it('should return the threads with the up voted thread when given by threads/UP_VOTE_THREAD action', () => {
+    // Arrange
+    const initialState = [
+      {
+        id: 'thread-1',
+        title: 'First Thread',
+        body: 'Hello world',
+        category: 'Percobaan',
+        createdAt: '2024-05-21T07:00:00.000Z',
+        ownerId: 'user-1',
+        totalComments: 0,
+        upVotesBy: [],
+        downVotesBy: [],
+      },
+    ];
+
+    const action = {
+      type: THREADS_ACTION_TYPES.UP_VOTE_THREAD,
+      payload: {
+        threadId: 'thread-1',
+        userId: 'user-1',
+      },
+    };
+
+    // Action
+    const nextState = threadsReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual([
+      {
+        ...initialState[0],
+        upVotesBy: [action.payload.userId],
+        downVotesBy: [],
+      },
+    ]);
+  });
+
+  it('should return the threads with the down voted thread when given by threads/DOWN_VOTE_THREAD action', () => {
+    // Arrange
+    const initialState = [
+      {
+        id: 'thread-1',
+        title: 'First Thread',
+        body: 'Hello world',
+        category: 'Percobaan',
+        createdAt: '2024-05-21T07:00:00.000Z',
+        ownerId: 'user-1',
+        totalComments: 0,
+        upVotesBy: [],
+        downVotesBy: [],
+      },
+    ];
+
+    const action = {
+      type: THREADS_ACTION_TYPES.DOWN_VOTE_THREAD,
+      payload: {
+        threadId: 'thread-1',
+        userId: 'user-1',
+      },
+    };
+
+    // Action
+    const nextState = threadsReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual([
+      {
+        ...initialState[0],
+        upVotesBy: [],
+        downVotesBy: [action.payload.userId],
+      },
+    ]);
+  });
 });
