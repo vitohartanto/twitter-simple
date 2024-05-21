@@ -22,21 +22,32 @@ function HomePage() {
   // useMemo is used here to optimize performance by memoizing the filtered result of the threads
   // array based on the category prop, recalculating it only when necessary
   const filteredThreads = useMemo(
-    () => threads.filter((thread) => thread?.category.toLowerCase().includes(category?.toLowerCase())),
-    [threads, category],
+    () =>
+      threads.filter((thread) =>
+        thread?.category.toLowerCase().includes(category?.toLowerCase())
+      ),
+    [threads, category]
   );
 
-  const threadLists = useMemo(() => filteredThreads.map((thread) => ({
-    ...thread,
-    user: users.find((user) => user.id === thread.ownerId),
-  })), [filteredThreads, users]);
+  const threadLists = useMemo(
+    () =>
+      filteredThreads.map((thread) => ({
+        ...thread,
+        user: users.find((user) => user.id === thread.ownerId),
+      })),
+    [filteredThreads, users]
+  );
 
-  const threadCategory = useMemo(() => threads.reduce((accumulator, current) => {
-    if (!accumulator.find((item) => item.category === current.category)) {
-      accumulator.push(current);
-    }
-    return accumulator;
-  }, []), [threads]);
+  const threadCategory = useMemo(
+    () =>
+      threads.reduce((accumulator, current) => {
+        if (!accumulator.find((item) => item.category === current.category)) {
+          accumulator.push(current);
+        }
+        return accumulator;
+      }, []),
+    [threads]
+  );
   return (
     <div>
       <ImageBackground
@@ -49,7 +60,8 @@ function HomePage() {
       <div className="pr-6 flex flex-col min-[850px]:flex-row">
         {/* POPULAR CATEGORY */}
         <div className="mt-8 ml-6 grow">
-          <h1 className="
+          <h1
+            className="
   mb-2
   font-medium
   text-white
@@ -119,7 +131,8 @@ function HomePage() {
 
         {/* AVAILABLE DISCUSSIONS */}
         <div className="mt-8 ml-6 mb-8 grow-[10]">
-          <h1 className="
+          <h1
+            className="
   mb-2
   font-medium
   text-white
