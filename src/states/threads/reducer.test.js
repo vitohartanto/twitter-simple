@@ -151,7 +151,7 @@ describe('threadsReducer function', () => {
     ]);
   });
 
-  it('should return the threads with the up voted thread when given by threads/UP_VOTE_THREAD action', () => {
+  it('should return the threads with the neutralize voted thread when given by threads/NEUTRALIZE_VOTE_THREAD action', () => {
     // Arrange
     const initialState = [
       {
@@ -162,7 +162,7 @@ describe('threadsReducer function', () => {
         createdAt: '2024-05-21T07:00:00.000Z',
         ownerId: 'user-1',
         totalComments: 0,
-        upVotesBy: [],
+        upVotesBy: ['user-1'],
         downVotesBy: [],
       },
     ];
@@ -182,7 +182,7 @@ describe('threadsReducer function', () => {
     expect(nextState).toEqual([
       {
         ...initialState[0],
-        upVotesBy: [action.payload.userId],
+        upVotesBy: [],
         downVotesBy: [],
       },
     ]);
