@@ -21,7 +21,7 @@ const THREAD_DETAIL_ACTION_TYPES = {
  * - threadDetailReducer function
  *  - should return the initial state when given by unknow action
  *  - should return thread when given by threadDetail/SEE_THREAD_DETAIL action
- *  - should return thread detail with new comment when given by threadDetail/ADD_COMMENT_THREAD_DETAIL action
+ *  - should return thread detail with new comment when given by threadDetail/CREATE_COMMENT_THREAD_DETAIL action
  *  - should return the thread detail with toggled up vote thread detail
  *      when given threadDetail/TOGGLE_UPVOTE_THREAD_DETAIL action
  *  - should return the thread detail with toggled neutral vote thread detail
@@ -169,6 +169,57 @@ describe('threadDetailReducer function', () => {
     expect(nextState).toEqual({
       ...initialState,
       comments: [action.payload.comment, ...initialState.comments],
+    });
+  });
+
+  // eslint-disable-next-line max-len
+  it('should return the thread detail with toggled up vote thread detail when given threadDetail/TOGGLE_UPVOTE_THREAD_DETAIL action', () => {
+    // Arrange
+    const initialState = {
+      id: 'thread-1',
+      title: 'First Thread',
+      body: 'Hello world',
+      createdAt: '2024-05-21T02:14:19.068Z',
+      owner: {
+        id: 'user-1',
+        name: 'Riko',
+        avatar: 'https://ui-avatars.com/api/?name=Riko&background=random',
+      },
+      category: 'Percobaan',
+      comments: [
+        {
+          id: 'comment-1',
+          content: 'Apa kabar',
+          createdAt: '2024-05-21T02:22:27.078Z',
+          owner: {
+            id: 'user-doni',
+            name: 'Doni',
+            avatar: 'https://ui-avatars.com/api/?name=Doni&background=random',
+          },
+          upVotesBy: ['user-2'],
+          downVotesBy: [],
+        },
+      ],
+      upVotesBy: [],
+      downVotesBy: [],
+    };
+
+    const action = {
+      type: THREAD_DETAIL_ACTION_TYPES.UP_VOTE_THREAD_DETAIL,
+      payload: {
+        threadId: 'thread-1',
+        userId: 'user-1',
+      },
+    };
+
+    // Action
+    const nextState = threadDetailReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual({
+      ...initialState,
+      upVotesBy: [action.payload.userId],
+      downVotesBy: [],
     });
   });
 });
