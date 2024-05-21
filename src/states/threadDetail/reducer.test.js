@@ -60,7 +60,7 @@ describe('threadDetailReducer function', () => {
             id: 'thread-1',
             title: 'First Thread',
             body: 'Hello world',
-            createdAt: '2024-05-21T02:14:19.068Z',
+            createdAt: '2024-05-21T07:00:00.000Z',
             owner: {
               id: 'user-1',
               name: 'Riko',
@@ -71,7 +71,7 @@ describe('threadDetailReducer function', () => {
               {
                 id: 'comment-1',
                 content: 'Apa kabar',
-                createdAt: '2024-05-21T02:22:27.078Z',
+                createdAt: '2024-05-21T07:00:00.000Z',
                 owner: {
                   id: 'user-doni',
                   name: 'Doni',
@@ -89,7 +89,7 @@ describe('threadDetailReducer function', () => {
             id: 'thread-2',
             title: 'Second Thread',
             body: 'Hello world 2',
-            createdAt: '2024-05-21T02:14:19.068Z',
+            createdAt: '2024-05-21T07:00:00.000Z',
             owner: {
               id: 'user-1',
               name: 'Doni',
@@ -100,7 +100,7 @@ describe('threadDetailReducer function', () => {
               {
                 id: 'comment-1',
                 content: 'Apa kabar Doni, saya Rizky',
-                createdAt: '2024-05-21T02:22:27.078Z',
+                createdAt: '2024-05-21T07:00:00.000Z',
                 owner: {
                   id: 'user-rizky',
                   name: 'Rizky',
@@ -131,7 +131,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -150,7 +150,7 @@ describe('threadDetailReducer function', () => {
         comment: {
           id: 'comment-1',
           content: 'First Comment',
-          createdAt: '2024-05-21T02:22:55.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-3',
             name: 'Rembo',
@@ -179,7 +179,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -190,7 +190,7 @@ describe('threadDetailReducer function', () => {
         {
           id: 'comment-1',
           content: 'Apa kabar',
-          createdAt: '2024-05-21T02:22:27.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-doni',
             name: 'Doni',
@@ -230,7 +230,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -241,7 +241,7 @@ describe('threadDetailReducer function', () => {
         {
           id: 'comment-1',
           content: 'Apa kabar',
-          createdAt: '2024-05-21T02:22:27.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-doni',
             name: 'Doni',
@@ -280,7 +280,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -291,7 +291,7 @@ describe('threadDetailReducer function', () => {
         {
           id: 'comment-1',
           content: 'Apa kabar',
-          createdAt: '2024-05-21T02:22:27.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-doni',
             name: 'Doni',
@@ -331,7 +331,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -342,7 +342,7 @@ describe('threadDetailReducer function', () => {
         {
           id: 'comment-1',
           content: 'Apa kabar',
-          createdAt: '2024-05-21T02:22:27.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-doni',
             name: 'Doni',
@@ -387,7 +387,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -398,7 +398,7 @@ describe('threadDetailReducer function', () => {
         {
           id: 'comment-1',
           content: 'Apa kabar',
-          createdAt: '2024-05-21T02:22:27.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-doni',
             name: 'Doni',
@@ -443,7 +443,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -454,7 +454,7 @@ describe('threadDetailReducer function', () => {
         {
           id: 'comment-1',
           content: 'Apa kabar',
-          createdAt: '2024-05-21T02:22:27.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-doni',
             name: 'Doni',
@@ -499,7 +499,7 @@ describe('threadDetailReducer function', () => {
       id: 'thread-1',
       title: 'First Thread',
       body: 'Hello world',
-      createdAt: '2024-05-21T02:14:19.068Z',
+      createdAt: '2024-05-21T07:00:00.000Z',
       owner: {
         id: 'user-1',
         name: 'Riko',
@@ -510,7 +510,7 @@ describe('threadDetailReducer function', () => {
         {
           id: 'comment-1',
           content: 'Apa kabar',
-          createdAt: '2024-05-21T02:22:27.078Z',
+          createdAt: '2024-05-21T07:00:00.000Z',
           owner: {
             id: 'user-doni',
             name: 'Doni',

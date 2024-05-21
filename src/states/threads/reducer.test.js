@@ -33,4 +33,44 @@ describe('threadsReducer function', () => {
     // Assert
     expect(nextState).toEqual(initialState);
   });
+
+  it('should return threads when given by threads/SEE_THREADS action', () => {
+    // Arrange
+    const initialState = [];
+    const action = {
+      type: THREADS_ACTION_TYPES.SEE_THREADS,
+      payload: {
+        threads: [
+          {
+            id: 'thread-1',
+            title: 'First Thread',
+            body: 'Hello world',
+            category: 'Percobaan',
+            createdAt: '2024-05-21T07:00:00.000Z',
+            ownerId: 'user-1',
+            totalComments: 0,
+            upVotesBy: [],
+            downVotesBy: [''],
+          },
+          {
+            id: 'thread-2',
+            title: 'Second Thread',
+            body: 'Hello world 2',
+            category: 'Percobaan 2',
+            createdAt: '2024-05-21T07:00:00.000Z',
+            ownerId: 'user-2',
+            totalComments: 2,
+            upVotesBy: ['user-3'],
+            downVotesBy: [''],
+          },
+        ],
+      },
+    };
+
+    // Action
+    const nextState = threadsReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual(action.payload.threads);
+  });
 });
