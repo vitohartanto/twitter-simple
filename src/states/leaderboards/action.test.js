@@ -8,7 +8,7 @@ import { asyncSeeLeaderboards, seeLeaderboardsActionCreator } from './action';
 /**
  * test scenario
  *
- * - asyncReceiveLeaderboards thunk
+ * - asyncSeeLeaderboards thunk
  *  - should dispatch action correctly when data fetching success
  *  - should dispatch action and call alert(react-hot-toast) correctly when data fetching failed
  */
