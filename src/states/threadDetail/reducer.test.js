@@ -379,4 +379,60 @@ describe('threadDetailReducer function', () => {
       ],
     });
   });
+
+  // eslint-disable-next-line max-len
+  it('should return the thread detail with down voted comment thread detail when given threadDetail/DOWN_VOTE_COMMENT_THREAD_DETAIL action', () => {
+    // Arrange
+    const initialState = {
+      id: 'thread-1',
+      title: 'First Thread',
+      body: 'Hello world',
+      createdAt: '2024-05-21T02:14:19.068Z',
+      owner: {
+        id: 'user-1',
+        name: 'Riko',
+        avatar: 'https://ui-avatars.com/api/?name=Riko&background=random',
+      },
+      category: 'Percobaan',
+      comments: [
+        {
+          id: 'comment-1',
+          content: 'Apa kabar',
+          createdAt: '2024-05-21T02:22:27.078Z',
+          owner: {
+            id: 'user-doni',
+            name: 'Doni',
+            avatar: 'https://ui-avatars.com/api/?name=Doni&background=random',
+          },
+          upVotesBy: [],
+          downVotesBy: [],
+        },
+      ],
+      upVotesBy: [],
+      downVotesBy: [],
+    };
+
+    const action = {
+      type: THREAD_DETAIL_ACTION_TYPES.DOWN_VOTE_COMMENT_THREAD_DETAIL,
+      payload: {
+        commentId: 'comment-1',
+        userId: 'user-1',
+      },
+    };
+
+    // Action
+    const nextState = threadDetailReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual({
+      ...initialState,
+      comments: [
+        {
+          ...initialState.comments[0],
+          upVotesBy: [],
+          downVotesBy: [action.payload.userId],
+        },
+      ],
+    });
+  });
 });
