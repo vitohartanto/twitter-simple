@@ -73,4 +73,44 @@ describe('threadsReducer function', () => {
     // Assert
     expect(nextState).toEqual(action.payload.threads);
   });
+
+  it('should return the threads with the new thread when given by threads/CREATE_THREAD action', () => {
+    // Arrange
+    const initialState = [
+      {
+        id: 'thread-1',
+        title: 'First Thread',
+        body: 'Hello world',
+        category: 'Percobaan',
+        createdAt: '2024-05-21T07:00:00.000Z',
+        ownerId: 'user-1',
+        totalComments: 0,
+        upVotesBy: [],
+        downVotesBy: [],
+      },
+    ];
+
+    const action = {
+      type: THREADS_ACTION_TYPES.CREATE_THREAD,
+      payload: {
+        thread: {
+          id: 'thread-2',
+          title: 'Second Thread',
+          body: 'Hello world 2',
+          category: 'Percobaan 2',
+          createdAt: '2024-05-21T07:00:00.000Z',
+          ownerId: 'user-2',
+          totalComments: 0,
+          upVotesBy: [],
+          downVotesBy: [],
+        },
+      },
+    };
+
+    // Action
+    const nextState = threadsReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual([action.payload.thread, ...initialState]);
+  });
 });
