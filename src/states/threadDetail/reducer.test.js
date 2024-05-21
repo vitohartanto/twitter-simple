@@ -48,4 +48,80 @@ describe('threadDetailReducer function', () => {
     // Assert
     expect(nextState).toEqual(initialState);
   });
+
+  it('should return thread when given by threadDetail/SEE_THREAD_DETAIL action', () => {
+    // Arrange
+    const initialState = [];
+    const action = {
+      type: THREAD_DETAIL_ACTION_TYPES.SEE_THREAD_DETAIL,
+      payload: {
+        threadDetail: [
+          {
+            id: 'thread-1',
+            title: 'First Thread',
+            body: 'Hello world',
+            createdAt: '2024-05-21T02:14:19.068Z',
+            owner: {
+              id: 'user-1',
+              name: 'Riko',
+              avatar: 'https://ui-avatars.com/api/?name=Riko&background=random',
+            },
+            category: 'Percobaan',
+            comments: [
+              {
+                id: 'comment-1',
+                content: 'Apa kabar',
+                createdAt: '2024-05-21T02:22:27.078Z',
+                owner: {
+                  id: 'user-doni',
+                  name: 'Doni',
+                  avatar:
+                    'https://ui-avatars.com/api/?name=Doni&background=random',
+                },
+                upVotesBy: ['user-2'],
+                downVotesBy: [],
+              },
+            ],
+            upVotesBy: [],
+            downVotesBy: ['user-2'],
+          },
+          {
+            id: 'thread-2',
+            title: 'Second Thread',
+            body: 'Hello world 2',
+            createdAt: '2024-05-21T02:14:19.068Z',
+            owner: {
+              id: 'user-1',
+              name: 'Doni',
+              avatar: 'https://ui-avatars.com/api/?name=Doni&background=random',
+            },
+            category: 'Percobaan 2',
+            comments: [
+              {
+                id: 'comment-1',
+                content: 'Apa kabar Doni, saya Rizky',
+                createdAt: '2024-05-21T02:22:27.078Z',
+                owner: {
+                  id: 'user-rizky',
+                  name: 'Rizky',
+                  avatar:
+                    'https://ui-avatars.com/api/?name=Rizky&background=random',
+                },
+                upVotesBy: ['user-2'],
+                downVotesBy: [],
+              },
+            ],
+            upVotesBy: [],
+            downVotesBy: ['user-2'],
+          },
+        ],
+      },
+    };
+
+    // Action
+    const nextState = threadDetailReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual(action.payload.threadDetail);
+  });
 });
