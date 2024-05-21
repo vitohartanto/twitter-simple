@@ -23,11 +23,11 @@ const THREAD_DETAIL_ACTION_TYPES = {
  *  - should return thread when given by threadDetail/SEE_THREAD_DETAIL action
  *  - should return thread detail with new comment when given by threadDetail/CREATE_COMMENT_THREAD_DETAIL action
  *  - should return the thread detail with up voted thread detail
- *      when given threadDetail/TOGGLE_UPVOTE_THREAD_DETAIL action
+ *      when given threadDetail/UP_VOTE_THREAD_DETAIL action
  *  - should return the thread detail with neutralize voted thread detail
- *      when given threadDetail/TOGGLE_NEUTRALVOTE_THREAD_DETAIL action
+ *      when given threadDetail/NEUTRALIZE_VOTE_THREAD_DETAIL action
  *  - should return the thread detail with down voted thread detail
- *      when given threadDetail/TOGGLE_DOWNVOTE_THREAD_DETAIL action
+ *      when given threadDetail/DOWN_VOTE_THREAD_DETAIL action
  *  - should return the thread detail with toggled up vote comment thread detail
  *      when given threadDetail/TOGGLE_UPVOTE_COMMENT_THREAD_DETAIL action
  *  - should return the thread detail with toggled neutral vote comment thread detail
@@ -270,6 +270,57 @@ describe('threadDetailReducer function', () => {
       ...initialState,
       upVotesBy: [],
       downVotesBy: [],
+    });
+  });
+
+  // eslint-disable-next-line max-len
+  it('should return the thread detail with down voted thread detail when given threadDetail/DOWN_VOTE_THREAD_DETAIL action', () => {
+    // Arrange
+    const initialState = {
+      id: 'thread-1',
+      title: 'First Thread',
+      body: 'Hello world',
+      createdAt: '2024-05-21T02:14:19.068Z',
+      owner: {
+        id: 'user-1',
+        name: 'Riko',
+        avatar: 'https://ui-avatars.com/api/?name=Riko&background=random',
+      },
+      category: 'Percobaan',
+      comments: [
+        {
+          id: 'comment-1',
+          content: 'Apa kabar',
+          createdAt: '2024-05-21T02:22:27.078Z',
+          owner: {
+            id: 'user-doni',
+            name: 'Doni',
+            avatar: 'https://ui-avatars.com/api/?name=Doni&background=random',
+          },
+          upVotesBy: ['user-2'],
+          downVotesBy: [],
+        },
+      ],
+      upVotesBy: [],
+      downVotesBy: [],
+    };
+
+    const action = {
+      type: THREAD_DETAIL_ACTION_TYPES.DOWN_VOTE_THREAD_DETAIL,
+      payload: {
+        threadId: 'thread-1',
+        userId: 'user-1',
+      },
+    };
+
+    // Action
+    const nextState = threadDetailReducer(initialState, action);
+
+    // Assert
+    expect(nextState).toEqual({
+      ...initialState,
+      upVotesBy: [],
+      downVotesBy: [action.payload.userId],
     });
   });
 });
