@@ -1,6 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function LoginInput({ onSubmitHandler }) {
+function LoginInput({
+  email,
+  password,
+  onSubmitHandler,
+  onChangeEmailHandler,
+  onChangePasswordHandler,
+}) {
   return (
     <form
       onSubmit={onSubmitHandler}
@@ -32,6 +40,7 @@ function LoginInput({ onSubmitHandler }) {
         />
         <button
           type="submit"
+          title="Login"
           className="text-xl text-[#191919] hover:text-white
       hover:bg-[rgba(25,25,25,0.90)] hover:border-2 hover:border-white
       px-4 py-2 font-medium mt-4 mb-2 backdrop-blur-[2px]
@@ -50,5 +59,13 @@ function LoginInput({ onSubmitHandler }) {
     </form>
   );
 }
+
+LoginInput.propTypes = {
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  onSubmitHandler: PropTypes.func.isRequired,
+  onChangeEmailHandler: PropTypes.func.isRequired,
+  onChangePasswordHandler: PropTypes.func.isRequired,
+};
 
 export default LoginInput;
