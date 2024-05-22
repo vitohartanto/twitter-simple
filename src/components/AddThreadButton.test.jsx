@@ -6,12 +6,12 @@ import { cleanup, render, screen } from '@testing-library/react';
 import matchers from '@testing-library/jest-dom/matchers';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
-import BackButton from './BackButton';
+import AddThreadButton from './AddThreadButton';
 
 // Extend expect with jest-dom matchers
 expect.extend(matchers);
 
-describe('BackButton component', () => {
+describe('AddThreadButton component', () => {
   afterEach(() => {
     cleanup();
   });
@@ -20,7 +20,7 @@ describe('BackButton component', () => {
     // Arrange
     render(
       <BrowserRouter>
-        <BackButton />
+        <AddThreadButton />
       </BrowserRouter>
     );
 
@@ -29,7 +29,7 @@ describe('BackButton component', () => {
 
     // Action
     // /back/i is Regular expression that matches the word "back" case-insensitively
-    const linkElement = screen.getByRole('link', { name: /back/i });
+    const linkElement = screen.getByTitle('Create New Thread');
 
     // Assert
     expect(linkElement).toBeInTheDocument();
@@ -39,24 +39,22 @@ describe('BackButton component', () => {
     // Arrange
     render(
       <BrowserRouter>
-        <BackButton />
+        <AddThreadButton />
       </BrowserRouter>
     );
 
-    // Act
-    const backSymbol = screen.getByText('<');
-    const backText = screen.getByText('Back');
+    // Action
+    const addSymbol = screen.getByText('+');
 
     // Assert
-    expect(backSymbol).toBeInTheDocument();
-    expect(backText).toBeInTheDocument();
+    expect(addSymbol).toBeInTheDocument();
   });
 
   it('should navigate to the correct URL when clicked', async () => {
     // Arrange
     const { container } = render(
       <BrowserRouter>
-        <BackButton />
+        <AddThreadButton />
       </BrowserRouter>
     );
 
@@ -66,8 +64,8 @@ describe('BackButton component', () => {
     await userEvent.click(linkElement);
 
     // Assert
-    expect(linkElement).toHaveAttribute('href', '/');
+    expect(linkElement).toHaveAttribute('href', '/threads/newThread');
     // Assert - Check if the URL changes after clicking
-    expect(window.location.pathname).toBe('/');
+    expect(window.location.pathname).toBe('/threads/newThread');
   });
 });
