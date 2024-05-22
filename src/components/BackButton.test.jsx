@@ -24,9 +24,6 @@ describe('BackButton component', () => {
       </BrowserRouter>
     );
 
-    // Debug
-    screen.debug(); // This will print the rendered output
-
     // Action
     // /back/i is Regular expression that matches the word "back" case-insensitively
     const linkElement = screen.getByRole('link', { name: /back/i });

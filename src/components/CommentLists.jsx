@@ -4,8 +4,10 @@ import Comment from './Comment';
 
 function CommentLists({ comments }) {
   return (
-    <div>
-      {comments?.map((comment) => <Comment key={comment.id} comment={comment} />)}
+    <div data-testid="empty-div">
+      {comments?.map((comment) => (
+        <Comment key={comment.id} comment={comment} />
+      ))}
     </div>
   );
 }
