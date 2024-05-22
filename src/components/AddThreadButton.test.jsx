@@ -8,6 +8,13 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import AddThreadButton from './AddThreadButton';
 
+/**
+ * - AddThreadButton Component Testing
+ *   - should render component correctly
+ *   - should display the correct text
+ *   - should navigate to the correct URL when clicked
+ */
+
 // Extend expect with jest-dom matchers
 expect.extend(matchers);
 
@@ -16,7 +23,7 @@ describe('AddThreadButton component', () => {
     cleanup();
   });
 
-  it('renders correctly', () => {
+  it('should render component correctly', () => {
     // Arrange
     render(
       <BrowserRouter>
@@ -32,7 +39,7 @@ describe('AddThreadButton component', () => {
     expect(linkElement).toBeInTheDocument();
   });
 
-  it('displays the correct text', () => {
+  it('should display the correct text', () => {
     // Arrange
     render(
       <BrowserRouter>
