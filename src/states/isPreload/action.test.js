@@ -9,7 +9,7 @@ import { setAuthUserActionCreator } from '../authUser/action';
  *
  * - asyncPreloadProcess thunk
  *  - should dispatch action correctly when data fetching success
- *  - should dispatch action and call alert correctly when data fetching failed
+ *  - should dispatch action correctly when data fetching failed
  */
 
 const fakeAuthUserResponse = {
