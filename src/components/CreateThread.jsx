@@ -40,6 +40,7 @@ function CreateThread({
           data-text="Thread's body here, with support for rich text formatting such as bold, italic, underline, and more."
           name="body"
           type="text"
+          title="body"
           onInput={onChangeInputBody}
           value={body}
           contentEditable
