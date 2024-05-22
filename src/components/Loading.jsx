@@ -3,7 +3,7 @@ import LoadingBar from 'react-redux-loading-bar';
 
 function Loading() {
   return (
-    <LoadingBar className="z-[150] h-1 bg-[#f01e2c]" />
+    <LoadingBar title="loading-bar" className="z-[150] h-1 bg-[#f01e2c]" />
   );
 }
 

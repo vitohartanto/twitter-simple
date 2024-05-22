@@ -4,7 +4,7 @@ import Comment from './Comment';
 
 function CommentLists({ comments }) {
   return (
-    <div data-testid="empty-div">
+    <div>
       {comments?.map((comment) => (
         <Comment key={comment.id} comment={comment} />
       ))}
