@@ -8,6 +8,13 @@ import matchers from '@testing-library/jest-dom/matchers';
 import { BrowserRouter } from 'react-router-dom';
 import CreateThread from './CreateThread';
 
+/**
+ * - CreateThread Component Testing
+ *   - should handle title typing correctly
+ *   - should handle category typing correctly
+ *   - should handle body typing correctly (body supports Rich Format Text)
+ */
+
 expect.extend(matchers);
 
 describe('CreateThread component', () => {
@@ -49,7 +56,7 @@ describe('CreateThread component', () => {
     expect(categoryInput).toHaveValue('category');
   });
 
-  it('should handle body typing correctly', async () => {
+  it('should handle body typing correctly (body supports Rich Format Text)', async () => {
     // Arrange
     render(
       <BrowserRouter>
