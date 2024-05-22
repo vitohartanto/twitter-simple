@@ -8,6 +8,12 @@ import matchers from '@testing-library/jest-dom/matchers';
 import { BrowserRouter } from 'react-router-dom';
 import LoginInput from './LoginInput';
 
+/**
+ * - LoginInput Component Testing
+ *   - should handle email typing correctly
+ *   - should handle password typing correctly
+ */
+
 expect.extend(matchers);
 
 describe('LoginInput component', () => {
@@ -48,29 +54,4 @@ describe('LoginInput component', () => {
     // Assert
     expect(emailInput).toHaveValue('ganmara');
   });
-
-  //   it('should call login function when login button is clicked', async () => {
-  //     // Arrange
-  //     const mockLogin = vi.fn();
-  //     render(
-  //       <BrowserRouter>
-  //         <LoginInput onLoginHandler={mockLogin} />
-  //       </BrowserRouter>
-  //     );
-  //     const emailInput = screen.getByPlaceholderText('Email');
-  //     await userEvent.type(emailInput, 'ganmara888@gmail.com');
-  //     const passwordInput = screen.getByPlaceholderText('Password');
-  //     await userEvent.type(passwordInput, 'ganmara');
-  //     const loginButton = screen.getByTitle('Login');
-
-  //     // Action
-  //     await userEvent.click(loginButton);
-
-  //     // Assert
-  //     expect(loginButton).toBeInTheDocument();
-  //     expect(mockLogin).toBeCalledWith({
-  //       id: 'ganmara888@gmail.com',
-  //       password: 'ganmara',
-  //     });
-  //   });
 });
