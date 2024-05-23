@@ -7,6 +7,7 @@ import ThreadLists from '../components/ThreadLists';
 import landscapeBackground from '../img/nicePageSignIn.png';
 import ImageBackground from '../components/ImageBackground';
 import NavigationBar from '../components/NavigationBar';
+import AvailableDiscussions from '../components/AvailableDiscussions';
 
 function HomePage() {
   const threads = useSelector((state) => state.threads || []);
@@ -132,6 +133,7 @@ function HomePage() {
 
         {/* AVAILABLE DISCUSSIONS */}
         <div className="mt-8 ml-6 mb-8 grow-[10]">
+          <AvailableDiscussions />
           <h1
             className="
   mb-2

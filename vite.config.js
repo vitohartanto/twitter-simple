@@ -8,4 +8,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true, // Use globals to avoid needing to import `describe`, `it`, etc.
   },
+  compiler: {
+    styledComponents: true,
+  },
 });
