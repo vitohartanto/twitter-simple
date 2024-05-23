@@ -1,14 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import toast from 'react-hot-toast';
+import useInput from '../hooks/useInput';
 
-function LoginInput({
-  email,
-  password,
-  onSubmitHandler,
-  onChangeEmailHandler,
-  onChangePasswordHandler,
-}) {
+function LoginInput({ login }) {
+  const [email, onChangeEmailHandler] = useInput('');
+  const [password, onChangePasswordHandler] = useInput('');
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    if (!email || !password) {
+      toast.error('Please complete both inputs');
+      return;
+    }
+
+    login({ email, password });
+  };
   return (
     <form
       onSubmit={onSubmitHandler}
@@ -61,11 +70,7 @@ function LoginInput({
 }
 
 LoginInput.propTypes = {
-  email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  onSubmitHandler: PropTypes.func.isRequired,
-  onChangeEmailHandler: PropTypes.func.isRequired,
-  onChangePasswordHandler: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
 };
 
 export default LoginInput;
