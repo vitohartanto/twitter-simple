@@ -27,7 +27,7 @@ function LoginInput({ login }) {
     >
       <h1 className="text-3xl text-white font-bold mb-4 mt-2">Sign In</h1>
       <h2 className="text-xl text-white font-medium mb-4">
-        Join the conversation! Share your story!
+        Join the conversation sekarang! Share your story!
       </h2>
       <div className="flex flex-col">
         <input

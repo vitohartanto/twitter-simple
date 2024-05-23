@@ -7,7 +7,8 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:storybook/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -21,7 +22,12 @@
         "cypress"
     ],
     "rules": {
-        "max-len": ["error", { "code": 130 }],
+        "max-len": [
+            "error",
+            {
+                "code": 130
+            }
+        ],
         "no-underscore-dangle": "off"
     }
 }
