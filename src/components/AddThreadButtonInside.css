@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Poppins';
+}
+
+.fixed {
+  position: fixed;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.bottom-6 {
+  bottom: 1.5rem /* 24px */;
+}
+
+.right-6 {
+  right: 1.5rem /* 24px */;
+}
+
+.relative {
+  position: relative;
+}
+
+.w-16 {
+  width: 4rem /* 64px */;
+}
+
+.h-16 {
+  height: 4rem /* 64px */;
+}
+
+.backdrop-blur-\[2px\] {
+  --tw-backdrop-blur: blur(2px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
+}
+
+.border-\[1px_solid_rgba\(255\2c 255\2c 255\2c 0\.18\)\] {
+  border-color: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.shadow-\[0_8px_32px_0_rgba\(31\2c 38\2c 135\2c 0\.37\)\] {
+  --tw-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --tw-shadow-colored: 0 8px 32px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.little-rounded {
+  border-radius: 18px;
+}
+
+.bg-\[rgba\(255\2c 255\2c 255\2c 0\.90\)\] {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.text-3xl {
+  font-size: 1.875rem /* 30px */;
+  line-height: 2.25rem /* 36px */;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.custom-top {
+  top: -25%;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.custom-left {
+  left: 35%;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}

@@ -1,5 +1,5 @@
 // AvailableDiscussions.stories.jsx
-import '../index.css';
+
 import React from 'react';
 import AvailableDiscussions from '../components/AvailableDiscussions';
 
