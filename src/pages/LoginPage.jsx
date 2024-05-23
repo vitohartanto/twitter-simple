@@ -1,9 +1,6 @@
 import React from 'react';
-
 import { useDispatch } from 'react-redux';
-import toast from 'react-hot-toast';
 import { asyncSetAuthUser } from '../states/authUser/action';
-import useInput from '../hooks/useInput';
 import landscapeBackground from '../img/nicePageSignIn.png';
 import ImageBackground from '../components/ImageBackground';
 import threadNestLogo from '../img/threadNestLogo.png';
@@ -14,20 +11,6 @@ function LoginPage() {
 
   const onLoginHandler = ({ email, password }) => {
     dispatch(asyncSetAuthUser({ email, password }));
-  };
-
-  const [email, onChangeEmailHandler] = useInput('');
-  const [password, onChangePasswordHandler] = useInput('');
-
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-
-    if (!email || !password) {
-      toast.error('Please complete both inputs');
-      return;
-    }
-
-    onLoginHandler({ email, password });
   };
 
   return (
@@ -43,13 +26,7 @@ function LoginPage() {
       >
         <img src={threadNestLogo} alt="Thread Nest Logo" />
       </div>
-      <LoginInput
-        email={email}
-        password={password}
-        onSubmitHandler={onSubmitHandler}
-        onChangeEmailHandler={onChangeEmailHandler}
-        onChangePasswordHandler={onChangePasswordHandler}
-      />
+      <LoginInput login={onLoginHandler} />
     </div>
   );
 }
