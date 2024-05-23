@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -40,11 +41,6 @@ bg-[rgba(25,25,25,0.90)]
 AvailableDiscussions.propTypes = {
   content: PropTypes.string,
   type: PropTypes.string,
-};
-
-AvailableDiscussions.defaultProps = {
-  content: 'for StoryBook',
-  type: 'brown',
 };
 
 export default AvailableDiscussions;
