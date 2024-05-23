@@ -26,9 +26,8 @@ function HomePage() {
   const filteredThreads = useMemo(
     () =>
       threads.filter((thread) =>
-        thread?.category.toLowerCase().includes(category?.toLowerCase())
-      ),
-    [threads, category]
+        thread?.category.toLowerCase().includes(category?.toLowerCase())),
+    [threads, category],
   );
 
   const threadLists = useMemo(
@@ -37,7 +36,7 @@ function HomePage() {
         ...thread,
         user: users.find((user) => user.id === thread.ownerId),
       })),
-    [filteredThreads, users]
+    [filteredThreads, users],
   );
 
   const threadCategory = useMemo(
@@ -48,7 +47,7 @@ function HomePage() {
         }
         return accumulator;
       }, []),
-    [threads]
+    [threads],
   );
   return (
     <div>
